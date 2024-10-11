@@ -66,7 +66,7 @@ nav a.active{
 @media(max-width:995px){
     nav{
         position: absolute;
-        display: flex;
+        display: stretch;
         top: 0;
         right: 0;
         width: 40%;

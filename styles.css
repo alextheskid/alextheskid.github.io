@@ -159,8 +159,8 @@ header {
 
 
 .card {
-  width: 500px; /* Kártyák szélessége */
-  height: 5%; /* Kártyák magassága */
+  width: 400px; /* Kártyák szélessége */
+  height: 400px; /* Kártyák magassága */
   background-color: #222; /* Kártyák háttérszíne */
   border-radius: 10px; /* Lekerekített sarkok */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Árnyék */

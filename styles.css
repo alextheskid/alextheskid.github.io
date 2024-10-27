@@ -301,9 +301,9 @@ body {
 
 .content {
   width: 100%;
-  height: 200px;
+  height: 150px;
   position: absolute;
-  bottom: -120px;
+  bottom: -100px;
   background: rgba(0, 0, 0, 0.5);
   padding: 10px;
   color: #ffffff;
@@ -456,15 +456,15 @@ nav.active {
 
 
 .card {
-  width: 400px; /* Kártyák szélessége */
-  height: 400px; /* Kártyák magassága */
+  width: 300px; /* Kártyák szélessége */
+  height: 300px; /* Kártyák magassága */
   background-color: #222; /* Kártyák háttérszíne */
   border-radius: 10px; /* Lekerekített sarkok */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Árnyék */
-  margin: 20px 0; /* Térköz a kártyák között */
+  margin: 10px 0; /* Térköz a kártyák között */
   overflow: hidden; /* Túlfolyás elrejtése */
   position: relative; /* Hozzáadva az abszolút pozicionálás miatt */
-  transition: transform 0.3s ease; /* Animáció a mozgáskor */
+  transition: transform 0.5s ease; /* Animáció a mozgáskor */
 }
 
 .content {

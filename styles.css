@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+    background-color: black;
+    color: white;
+}
+
+header {
+    margin-top: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 9%;
+    background-color: transparent;
+    filter: drop-shadow(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 3rem;
+    color: #b74b4b;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.line {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 3px 0;
+}
+
+nav {
+    display: flex;
+}
+
+nav a {
+    font-size: 1.8rem;
+    color: white;
+    margin-left: 4rem;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+nav.active {
+    display: block;
+}
+
+@media(max-width: 995px) {
+    .hamburger {
+        display: flex;
+    }
+
+    nav {
+        display: none; /* Alapértelmezett állapotban elrejtve */
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 40%;
+        border-left: 3px solid #b74b4b;
+        border-bottom: 3px solid #b74b4b;
+        border-bottom-left-radius: 2rem;
+        padding: 1rem;
+        background-color: #161616;
+    }
+
+    nav.active {
+        display: block; /* Aktív állapotban látható */
+    }
+
+    nav a {
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+    }
+}
+
+
+
+body {
+  background-color: black;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 2rem;
+  color: #b74b4b;
+}
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.line {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 3px 0;
+}
+
+
+
+
+
+
+
+
+
+.wrapper {
+  display: flex;
+  flex-direction: column; /* Függőleges elrendezés */
+  align-items: center; /* Középre igazítás vízszintesen */
+  justify-content: flex-start; /* Függőleges irányban a tetejétől indul */
+  margin-top: 80px; /* Térköz a fejléc alatt */
+}
+
+
+.card {
+  width: 500px; /* Kártyák szélessége */
+  height: 5%; /* Kártyák magassága */
+  background-color: #222; /* Kártyák háttérszíne */
+  border-radius: 10px; /* Lekerekített sarkok */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Árnyék */
+  margin: 20px 0; /* Térköz a kártyák között */
+  overflow: hidden; /* Túlfolyás elrejtése */
+  position: relative; /* Hozzáadva az abszolút pozicionálás miatt */
+  transition: transform 0.3s ease; /* Animáció a mozgáskor */
+}
+
+.content {
+  position: absolute; 
+  bottom: 0; 
+  background: rgba(0, 0, 0, 0.7); 
+  width: 100%; 
+  padding: 10px;
+  text-align: center; 
+  transform: translateY(100%); 
+  transition: transform 0.5s; 
+  opacity: 0; /* Alapértelmezett láthatóság */
+  visibility: hidden; /* Alapértelmezett rejtett állapot */
+}
+
+.card.active .content {
+  transform: translateY(0); /* Megjelenítés */
+  opacity: 1; /* Teljes láthatóság */
+  visibility: visible; /* Látható állapot */
+}
+
+
+
+
+
+.card:hover .content {
+  transform: translateY(0); /* Megjelenítés hover hatásra */
+}

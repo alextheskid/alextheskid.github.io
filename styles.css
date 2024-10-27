@@ -296,7 +296,7 @@ body {
 .wrapper {
   display: flex;
     position: relative;
-    margin-top: 100px; /* Növeld meg ezt az értéket a kívánt távolság eléréséhez */
+    margin-top: 10px; /* Növeld meg ezt az értéket a kívánt távolság eléréséhez */
 }
 
 
@@ -455,7 +455,6 @@ nav.active {
   flex-direction: column; /* Függőleges elrendezés */
   align-items: center; /* Középre igazítás vízszintesen */
   justify-content: flex-start; /* Függőleges irányban a tetejétől indul */
-  margin-top: 100px; /* Térköz a fejléc alatt */
 }
 
 

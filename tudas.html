@@ -58,11 +58,20 @@
       </div>
     </div>
     <script src="script.js"></script>
-    <script>document.querySelectorAll('.card').forEach(card => {
-      card.addEventListener('click', () => {
-          card.classList.toggle('active');
-      });
-  });
+    <script>
+      document.querySelectorAll('.card').forEach(card => {
+    card.addEventListener('mouseenter', () => {
+        card.classList.add('active');
+    });
+    
+    card.addEventListener('mouseleave', () => {
+        card.classList.remove('active');
+    });
+
+    card.addEventListener('click', () => {
+        card.classList.toggle('active');
+    });
+});
   </script>
   </body>
 </html>

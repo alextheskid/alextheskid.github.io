@@ -455,7 +455,7 @@ nav.active {
   flex-direction: column; /* Függőleges elrendezés */
   align-items: center; /* Középre igazítás vízszintesen */
   justify-content: flex-start; /* Függőleges irányban a tetejétől indul */
-  margin-top: 400px; /* Térköz a fejléc alatt */
+  margin-top: 100px; /* Térköz a fejléc alatt */
 }
 
 

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adatok</title>
+</head>
+
+<body>
+    <form action="cel.html">
+        <fieldset>
+            <legend><b>Adatok</b></legend>
+            <p>
+                <label><b>Név:</b> <br>
+                    <input type="text" name="nev" placeholder="Írd be a neved">
+                </label><br>
+            </p>
+            <p>
+                <label><b>Email:</b> <br>
+                    <input type="email" name="e-mail" placeholder="Add meg a címed">
+                </label>
+            </p>
+            <p>
+                <b>Nemed:</b><br>
+                <label><input type="radio" name="nem" value="férfi">Férfi</label> <br>
+                <label><input type="radio" name="nem" value="Nő" checked>Nő </label>
+            </p>
+            <p>
+                <b>Korod:</b>
+                <select name="kor">
+                    <option value="0">0-10</option>
+                    <option value="10">11-19</option>
+                    <option value="20">20-39</option>
+                    <option value="40">40-59</option>
+                    <option value="60">60+</option>
+                </select>
+            </p>
+            <p>
+                <b>Számítógéped:</b> <br>
+                <label><input type="checkbox" name="gep1" value="laptop">Laptopom van</label> <br>
+                <label><input type="checkbox" name="gep2" value="desktop">Asztali számítógépem van</label>
+            </p>
+            <p>
+                <b>Üzenet:</b><br>
+                <textarea name="uzenet" rows="10" cols="80" placeholder="Ide írd az üzenetet">
+        </textarea>
+            </p>
+            <p>
+                <input type="submit" value="mentés">
+                <input type="reset" value="Törlés">
+            </p>
+        </fieldset>
+    </form>
+</body>
+
+</html>

@@ -136,7 +136,7 @@ span{
 .home-img img{
     position: relative;
     width: 32vw;
-    border-radius: 50%;
+    border-radius: 10%;
     box-shadow: 0 0 25px solid #b74b4b;
     cursor: pointer;
     transition: 0.2s linear;
@@ -295,19 +295,35 @@ body {
 
 .wrapper {
   display: flex;
-    position: relative;
-    margin-top: 10px; /* Növeld meg ezt az értéket a kívánt távolság eléréséhez */
 }
 
+.card {
+  position: relative;
+  height: 450px;
+  width: 350px;
+  margin: 50px;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 5px 5px 20px #ff0000;
+  flex: 1 1 200px; /* Kártyák alapmérete 200px */
+}
 
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.5s;
+}
 
-
+.card:hover img {
+  transform: rotate(-2deg) scale(1.05);
+}
 
 .content {
   width: 100%;
-  height: 150px;
+  height: 200px;
   position: absolute;
-  bottom: -100px;
+  bottom: -120px;
   background: rgba(0, 0, 0, 0.5);
   padding: 10px;
   color: #ffffff;
@@ -317,6 +333,10 @@ body {
   justify-content: space-around;
 }
 
+.card:hover .content {
+  bottom: 0;
+  background: rgba(0, 0, 0, 1);
+}
 
 .content h1 {
   font-size: 30px;
@@ -439,60 +459,3 @@ nav.active {
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-.wrapper {
-  display: flex;
-  flex-direction: column; /* Függőleges elrendezés */
-  align-items: center; /* Középre igazítás vízszintesen */
-  justify-content: flex-start; /* Függőleges irányban a tetejétől indul */
-}
-
-
-.card {
-  width: 300px; /* Kártyák szélessége */
-  height: 300px; /* Kártyák magassága */
-  background-color: #222; /* Kártyák háttérszíne */
-  border-radius: 10px; /* Lekerekített sarkok */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Árnyék */
-  margin: 10px 0; /* Térköz a kártyák között */
-  overflow: hidden; /* Túlfolyás elrejtése */
-  position: relative; /* Hozzáadva az abszolút pozicionálás miatt */
-  transition: transform 0.5s ease; /* Animáció a mozgáskor */
-}
-
-.content {
-  position: absolute; 
-  bottom: 0; 
-  background: rgba(0, 0, 0, 0.7); 
-  width: 100%; 
-  padding: 10px;
-  text-align: center; 
-  transform: translateY(100%); 
-  transition: transform 0.5s; 
-  opacity: 0; /* Alapértelmezett láthatóság */
-  visibility: hidden; /* Alapértelmezett rejtett állapot */
-}
-
-.card.active .content {
-  transform: translateY(0); /* Megjelenítés */
-  opacity: 1; /* Teljes láthatóság */
-  visibility: visible; /* Látható állapot */
-}
-
-
-
-
-
-.card:hover .content {
-  transform: translateY(0); /* Megjelenítés hover hatásra */
-}

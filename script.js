@@ -102,7 +102,7 @@ function showYesAnimation() {
     setTimeout(() => {
         yesAudio.pause(); // Pause the audio file after 6 seconds
         yesAudio.currentTime = 0; // Reset the audio to the beginning
-    }, 6000); // 6 seconds
+    }, 12000); // 6 seconds
 
     setTimeout(() => {
         yesAnimation.classList.remove('fade-in');

@@ -65,3 +65,65 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('theme').value = 'dark';
     }
 });
+
+let counter = 0;
+
+function incrementCounter(amount = 690000000) {
+    counter += amount; // Add the specified amount to the counter
+    document.getElementById('counter').innerText = `Social credit: ${counter}`;
+}
+
+function decrementCounter(amount = 100) {
+    counter -= amount; // Subtract the specified amount from the counter
+    document.getElementById('counter').innerText = `Social credit: ${counter}`;
+}
+
+function updateCounter(value) {
+    if (value === 'yes') {
+        incrementCounter(30000000000); // Add 200 for "yes"
+        showYesAnimation(); // Show a different animation for "yes"
+    } else if (value === 'no') {
+        decrementCounter(100000000000); // Subtract 200 for "no"
+        showNoAnimation(); // Show a different animation for "no"
+    }
+}
+
+function showYesAnimation() {
+    const yesAnimation = document.getElementById('yes-animation');
+    const yesAudio = document.getElementById('yes-audio');
+    
+    yesAnimation.classList.remove('hidden');
+    yesAnimation.classList.remove('fade-out');
+    yesAnimation.classList.add('fade-in');
+    
+    yesAudio.volume = 0.2; // Set the volume to 20%
+    yesAudio.play(); // Play the audio file
+    
+    setTimeout(() => {
+        yesAudio.pause(); // Pause the audio file after 6 seconds
+        yesAudio.currentTime = 0; // Reset the audio to the beginning
+    }, 6000); // 6 seconds
+
+    setTimeout(() => {
+        yesAnimation.classList.remove('fade-in');
+        yesAnimation.classList.add('fade-out');
+        setTimeout(() => {
+            yesAnimation.classList.add('hidden');
+        }, 800); // A fade-out animáció időtartama
+    }, 3000);
+}
+
+function showNoAnimation() {
+    const noAnimation = document.getElementById('no-animation');
+    noAnimation.classList.remove('hidden');
+    noAnimation.classList.remove('fade-out');
+    noAnimation.classList.add('fade-in');
+    
+    setTimeout(() => {
+        noAnimation.classList.remove('fade-in');
+        noAnimation.classList.add('fade-out');
+        setTimeout(() => {
+            noAnimation.classList.add('hidden');
+        }, 800); // A fade-out animáció időtartama
+    }, 3000);
+}

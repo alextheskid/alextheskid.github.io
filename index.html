@@ -63,13 +63,33 @@
                 <a href="https://discord.gg/fnKfaByexg" target="_blank" data-hover-text="Discord"><i class="fa-brands fa-discord"></i></a>
                 <a href="https://paypal.me/squeezyalex" target="_blank" data-hover-text="PayPal Támogatás"><i class="fa-brands fa-paypal"></i></a>
             </div>
-            <a href="#" class="btn" onclick="showAnimation()">Nyomj meg</a> <br>
+            <a href="#" class="btn" onclick="showAnimation(); incrementCounter();">Nyomj meg</a> <br>
+            <h2>Tetszik a weboldal?</h2> <br>
+            <div class="radio">
+                <input label="Igen" type="radio" id="yes" name="feedback" value="yes" onchange="updateCounter(this.value)">
+                <input label="Nem" type="radio" id="no" name="feedback" value="no" onchange="updateCounter(this.value)">
+            </div>
         </div>
-        
+          
+
         <div id="animation" class="animation hidden">
             <img src="kepek/Pol-Pot.jpg" alt="">
             <h1>Szia uram</h1>
         </div>
+
+        <div id="yes-animation" class="animation hidden">
+            <img src="kepek/yessocialcredit.png" alt="">
+            <h1>Köszönöm!</h1>
+        </div>
+
+        <audio id="yes-audio" src="mao-zedong-propaganda-music-red-sun-in-the-sky.mp3"></audio>
+
+        <div id="no-animation" class="animation hidden">
+            <img src="kepek/nosocialcredit.jpg" alt="">
+            <h1>Nem Szigma!!!</h1>
+        </div>
+
+    <div id="counter" class="counter">Social credit: 0</div>
     </section>
     <script src="script.js"></script>
 </body>

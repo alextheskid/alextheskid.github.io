@@ -14,7 +14,7 @@ function showAnimation() {
         animation.classList.add('fade-out');
         setTimeout(() => {
             animation.classList.add('hidden');
-        }, 1000); // A fade-out animáció időtartama
+        }, 1000); 
     }, 5000);
 }
 
@@ -39,16 +39,16 @@ function changeTheme(theme) {
         typingTextSpan.classList.add('dark-theme');
     }
 
-    // Save the theme in a cookie
-    document.cookie = `theme=${theme}; path=/; max-age=31536000`; // 1 year
+
+    document.cookie = `theme=${theme}; path=/; max-age=31536000`; 
 }
 
 function acceptCookies() {
-    document.cookie = "cookies_accepted=true; path=/; max-age=31536000"; // 1 year
+    document.cookie = "cookies_accepted=true; path=/; max-age=31536000"; 
     document.getElementById('cookie-consent').style.display = 'none';
 }
 
-// Check if cookies are accepted and set the theme from the cookie
+
 document.addEventListener('DOMContentLoaded', () => {
     const cookiesAccepted = document.cookie.split('; ').find(row => row.startsWith('cookies_accepted='));
     if (cookiesAccepted) {
@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
         changeTheme(theme);
         document.getElementById('theme').value = theme;
     } else {
-        changeTheme('dark'); // Set default theme to dark
+        changeTheme('dark'); 
         document.getElementById('theme').value = 'dark';
     }
 });
@@ -69,22 +69,22 @@ document.addEventListener('DOMContentLoaded', () => {
 let counter = 0;
 
 function incrementCounter(amount = 690000000) {
-    counter += amount; // Add the specified amount to the counter
+    counter += amount; 
     document.getElementById('counter').innerText = `Social credit: ${counter}`;
 }
 
 function decrementCounter(amount = 100) {
-    counter -= amount; // Subtract the specified amount from the counter
+    counter -= amount; 
     document.getElementById('counter').innerText = `Social credit: ${counter}`;
 }
 
 function updateCounter(value) {
     if (value === 'yes') {
-        incrementCounter(30000000000); // Add 200 for "yes"
-        showYesAnimation(); // Show a different animation for "yes"
+        incrementCounter(30000000000); 
+        showYesAnimation(); 
     } else if (value === 'no') {
-        decrementCounter(100000000000); // Subtract 200 for "no"
-        showNoAnimation(); // Show a different animation for "no"
+        decrementCounter(100000000000); 
+        showNoAnimation(); 
     }
 }
 
@@ -96,20 +96,20 @@ function showYesAnimation() {
     yesAnimation.classList.remove('fade-out');
     yesAnimation.classList.add('fade-in');
     
-    yesAudio.volume = 0.2; // Set the volume to 20%
-    yesAudio.play(); // Play the audio file
+    yesAudio.volume = 0.2; 
+    yesAudio.play(); 
     
     setTimeout(() => {
-        yesAudio.pause(); // Pause the audio file after 6 seconds
-        yesAudio.currentTime = 0; // Reset the audio to the beginning
-    }, 12000); // 6 seconds
+        yesAudio.pause(); 
+        yesAudio.currentTime = 0; 
+    }, 12000); 
 
     setTimeout(() => {
         yesAnimation.classList.remove('fade-in');
         yesAnimation.classList.add('fade-out');
         setTimeout(() => {
             yesAnimation.classList.add('hidden');
-        }, 800); // A fade-out animáció időtartama
+        }, 800); 
     }, 3000);
 }
 
@@ -124,6 +124,6 @@ function showNoAnimation() {
         noAnimation.classList.add('fade-out');
         setTimeout(() => {
             noAnimation.classList.add('hidden');
-        }, 800); // A fade-out animáció időtartama
+        }, 800); 
     }, 3000);
 }

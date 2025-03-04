@@ -11,7 +11,8 @@
 }
 
 html {
-    font-size: 62.5%; /* 1rem = 10px */
+    font-size: 62.5%;
+    /* 1rem = 10px */
 }
 
 body {
@@ -20,6 +21,86 @@ body {
     overflow-x: hidden;
     background-color: black;
     color: white;
+}
+
+body.light-theme {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+body.dark-theme {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.theme-selector {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Adjust the gap as needed */
+    margin-left: 20px; /* Adjust the margin as needed */
+}
+
+.theme-selector label {
+    margin: 0;
+}
+
+.theme-selector select {
+    margin: 0;
+    padding: 0.5rem 1rem;
+    background-color: #333; /* Background color */
+    color: #fff; /* Text color */
+    border: 1px solid #9D00FF; /* Border color */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 1.6rem; /* Font size */
+    cursor: pointer;
+}
+
+.theme-selector select option {
+    background-color: #333; /* Background color for options */
+    color: #fff; /* Text color for options */
+}
+
+.home.light-theme {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.home.dark-theme {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.typing-text.light-theme span {
+    color: #000000;
+    background-color: transparent; /* Ensure background is transparent */
+}
+
+.typing-text.dark-theme span {
+    color: #ffffff;
+    background-color: transparent; /* Ensure background is transparent */
+}
+
+.cookie-consent {
+    position: fixed;
+    bottom: 0%;
+    left: 10px;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 1000;
+    font-size: 150%;
+}
+
+.cookie-consent button {
+    background-color: #9D00FF;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+    font-size: 150%;
 }
 
 header {
@@ -39,7 +120,7 @@ header {
 
 .logo {
     font-size: 3rem;
-    color: #b74b4b;
+    color: #9D00FF;
     font-weight: 800;
     cursor: pointer;
     transition: 0.5s ease;
@@ -62,9 +143,10 @@ nav a {
     border-bottom: 3px solid transparent;
 }
 
-nav a:hover, nav a.active {
-    color: #b74b4b;
-    border-bottom: 3px solid #b74b4b;
+nav a:hover,
+nav a.active {
+    color: #9D00FF;
+    border-bottom: 3px solid #9D00FF;
 }
 
 .hamburger {
@@ -91,8 +173,8 @@ nav a:hover, nav a.active {
         top: 60px;
         right: 0;
         width: 40%;
-        border-left: 3px solid #b74b4b;
-        border-bottom: 3px solid #b74b4b;
+        border-left: 3px solid #9D00FF;
+        border-bottom: 3px solid #9D00FF;
         border-bottom-left-radius: 2rem;
         padding: 1rem;
         background-color: #161616;
@@ -129,7 +211,7 @@ section {
 }
 
 span {
-    color: #b74b4b;
+    color: #9D00FF;
 }
 
 .home-content h3 {
@@ -150,7 +232,7 @@ span {
     position: relative;
     width: 32vw;
     border-radius: 10%;
-    box-shadow: 0 0 25px solid #b74b4b;
+    box-shadow: 0 0 25px solid #9D00FF;
     cursor: pointer;
     transition: 0.2s linear;
 }
@@ -166,19 +248,74 @@ span {
     width: 4rem;
     height: 4rem;
     background-color: transparent;
-    border: 0.2rem solid #b74b4b;
+    border: 0.2rem solid #9D00FF;
     font-size: 2rem;
     border-radius: 50%;
     margin: 3rem 1.5rem;
     transition: 0.3s ease;
-    color: #b74b4b;
+    color: #9D00FF;
+    position: relative;
 }
+
+
+.social-icons a:hover::after {
+    content: attr(data-hover-text);
+    position: absolute;
+    background-color: #9D00FF;
+    color: #ffffff;
+    padding: 5px;
+    border-radius: 5px;
+    top: -50px; /* Adjust as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    z-index: 10;
+}
+
 
 .social-icons a:hover {
     color: black;
     transform: scale(1.3) translateY(-5px);
-    background-color: #b74b4b;
-    box-shadow: 0 0 25px #b74b4b;
+    background-color: #9D00FF;
+    box-shadow: 0 0 25px #9D00FF;
+}
+
+.hidden {
+    display: none;
+}
+
+.animation {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-out {
+    animation: fadeOut 1s forwards;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
 }
 
 .btn {
@@ -187,38 +324,38 @@ span {
     background-color: black;
     border-radius: 4rem;
     font-size: 1.6rem;
-    color: #b74b4b;
+    color: #9D00FF;
     letter-spacing: 0.3rem;
     font-weight: 600;
-    border: 2px solid #b74b4b;
+    border: 2px solid #9D00FF;
     transition: 0.3s ease;
     cursor: pointer;
 }
 
 .btn:hover {
     transform: scale3d(1.03);
-    background-color: #b74b4b;
+    background-color: #9D00FF;
     color: black;
-    box-shadow: 0 0 25px #b74b4b;
+    box-shadow: 0 0 25px #9D00FF;
 }
 
-.typing-text{
+.typing-text {
     font-size: 34px;
     font-weight: 600;
     min-width: 280px;
 }
 
-.typing-text span{
+.typing-text span {
     position: relative;
 }
 
-.typing-text span::before{
+.typing-text span::before {
     content: "";
-    color: #b74b4b;
+    color: #9D00FF;
     animation: words 20s infinite;
 }
 
-.typing-text span::after{
+.typing-text span::after {
     content: "";
     background-color: black;
     position: absolute;
@@ -229,23 +366,41 @@ span {
     animation: cursor 0.6s infinite;
 }
 
-@keyframes cursor{
-    to{
-        border-left: 3px solid #b74b4b;
+.typing-text.light-theme span::after {
+    background-color: #ffffff; /* White background for light theme */
+    border-left: 3px solid #000000; /* Black cursor for light theme */
+}
+
+.typing-text.dark-theme span::after {
+    background-color: #000000; /* Black background for dark theme */
+    border-left: 3px solid #ffffff; /* White cursor for dark theme */
+}
+
+@keyframes cursor {
+    to {
+        border-left: 3px solid #9D00FF;
     }
 }
 
-@keyframes words{
-    0%, 20%{
+@keyframes words {
+
+    0%,
+    20% {
         content: "Web Fejlesztő";
     }
-    21%, 40%{
+
+    21%,
+    40% {
         content: "Játék Fejlesztő";
     }
-    41%, 60%{
+
+    41%,
+    60% {
         content: "Web Designer";
     }
-    81%, 100%{
+
+    81%,
+    100% {
         content: "Gamer";
     }
 }
@@ -276,6 +431,7 @@ span {
     }
 }
 
+
 .reklam {
     width: 200px;
     height: 200px;
@@ -286,6 +442,6 @@ span {
 }
 
 .reklam:hover {
-    transform: scale(1.1); 
-    border-color: lime;    
+    transform: scale(1.1);
+    border-color: lime;
 }

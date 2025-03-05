@@ -23,24 +23,28 @@ function changeTheme(theme) {
     const homeSection = document.querySelector('.home');
     const typingText = document.querySelector('.typing-text');
     const typingTextSpan = document.querySelector('.typing-text span');
+    const nav = document.querySelector('nav');
     homeSection.classList.remove('light-theme', 'dark-theme');
     typingText.classList.remove('light-theme', 'dark-theme');
     typingTextSpan.classList.remove('light-theme', 'dark-theme');
+    nav.classList.remove('light-theme', 'dark-theme');
     
     if (theme === 'light') {
         document.body.classList.add('light-theme');
         homeSection.classList.add('light-theme');
         typingText.classList.add('light-theme');
         typingTextSpan.classList.add('light-theme');
+        nav.classList.add('light-theme');
     } else if (theme === 'dark') {
         document.body.classList.add('dark-theme');
         homeSection.classList.add('dark-theme');
         typingText.classList.add('dark-theme');
         typingTextSpan.classList.add('dark-theme');
+        nav.classList.add('dark-theme');
     }
 
-
-    document.cookie = `theme=${theme}; path=/; max-age=31536000`; 
+    // Save the theme in a cookie
+    document.cookie = `theme=${theme}; path=/; max-age=31536000`; // 1 year
 }
 
 function acceptCookies() {

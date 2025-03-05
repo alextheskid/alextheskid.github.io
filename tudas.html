@@ -9,12 +9,20 @@
 
   <!--css-->
   <link rel="stylesheet" href="style.css" />
+  <script src="theme.js" defer></script>
 </head>
 
 <body>
 
   <header>
     <a href="index.html" class="logo">Al3x</a>
+    <div class="theme-selector">
+      <label for="theme"><h2>Téma:</h2></label>
+      <select id="theme" onchange="changeTheme(this.value)">
+          <option value="light">Világos</option>
+          <option value="dark" selected>Sötét</option>
+      </select>
+  </div>
 
 
     <div class="hamburger" onclick="toggleMenu()">
@@ -39,6 +47,13 @@
       float: right;
     }
   </style>
+
+
+<div id="cookie-consent" class="cookie-consent">
+  <p>Ez a weboldal sütiket használ a legjobb élmény biztosítása érdekében. <button onclick="acceptCookies()">Elfogadom</button></p>
+</div>
+
+<div id="overlay" class="overlay"></div>
 
 <!-- From Uiverse.io by codebykay101 --> 
 <div class="container">

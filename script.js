@@ -18,40 +18,28 @@ function showAnimation() {
     }, 5000);
 }
 
-function changeTheme(theme) {
-    document.body.classList.remove('light-theme', 'dark-theme');
-    const homeSection = document.querySelector('.home');
-    const typingText = document.querySelector('.typing-text');
-    const typingTextSpan = document.querySelector('.typing-text span');
-    const nav = document.querySelector('nav');
-    homeSection.classList.remove('light-theme', 'dark-theme');
-    typingText.classList.remove('light-theme', 'dark-theme');
-    typingTextSpan.classList.remove('light-theme', 'dark-theme');
-    nav.classList.remove('light-theme', 'dark-theme');
-    
-    if (theme === 'light') {
-        document.body.classList.add('light-theme');
-        homeSection.classList.add('light-theme');
-        typingText.classList.add('light-theme');
-        typingTextSpan.classList.add('light-theme');
-        nav.classList.add('light-theme');
-    } else if (theme === 'dark') {
-        document.body.classList.add('dark-theme');
-        homeSection.classList.add('dark-theme');
-        typingText.classList.add('dark-theme');
-        typingTextSpan.classList.add('dark-theme');
-        nav.classList.add('dark-theme');
-    }
-
-    // Save the theme in a cookie
-    document.cookie = `theme=${theme}; path=/; max-age=31536000`; // 1 year
-}
-
 function acceptCookies() {
     document.cookie = "cookies_accepted=true; path=/; max-age=31536000"; 
     document.getElementById('cookie-consent').style.display = 'none';
 }
 
+function setCookie(name, value, days) {
+    const date = new Date();
+    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+    const expires = "expires=" + date.toUTCString();
+    document.cookie = name + "=" + value + ";" + expires + ";path=/";
+}
+
+function getCookie(name) {
+    const nameEQ = name + "=";
+    const ca = document.cookie.split(';');
+    for (let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+        if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+    }
+    return null;
+}
 
 document.addEventListener('DOMContentLoaded', () => {
     const cookiesAccepted = document.cookie.split('; ').find(row => row.startsWith('cookies_accepted='));
@@ -68,27 +56,35 @@ document.addEventListener('DOMContentLoaded', () => {
         changeTheme('dark'); 
         document.getElementById('theme').value = 'dark';
     }
+
+    const counterCookie = getCookie('social_credit');
+    if (counterCookie) {
+        counter = parseInt(counterCookie, 10);
+        document.getElementById('counter').innerText = `Social credit: ${counter}`;
+    }
 });
 
 let counter = 0;
 
 function incrementCounter(amount = 690000000) {
-    counter += amount; 
+    counter += amount;
     document.getElementById('counter').innerText = `Social credit: ${counter}`;
+    setCookie('social_credit', counter, 365);
 }
 
 function decrementCounter(amount = 100) {
-    counter -= amount; 
+    counter -= amount;
     document.getElementById('counter').innerText = `Social credit: ${counter}`;
+    setCookie('social_credit', counter, 365);
 }
 
 function updateCounter(value) {
     if (value === 'yes') {
-        incrementCounter(30000000000); 
-        showYesAnimation(); 
+        incrementCounter(30000000000);
+        showYesAnimation();
     } else if (value === 'no') {
-        decrementCounter(100000000000); 
-        showNoAnimation(); 
+        decrementCounter(100000000000);
+        showNoAnimation();
     }
 }
 
@@ -100,20 +96,20 @@ function showYesAnimation() {
     yesAnimation.classList.remove('fade-out');
     yesAnimation.classList.add('fade-in');
     
-    yesAudio.volume = 0.2; 
-    yesAudio.play(); 
+    yesAudio.volume = 0.2;
+    yesAudio.play();
     
     setTimeout(() => {
-        yesAudio.pause(); 
-        yesAudio.currentTime = 0; 
-    }, 12000); 
+        yesAudio.pause();
+        yesAudio.currentTime = 0;
+    }, 12000);
 
     setTimeout(() => {
         yesAnimation.classList.remove('fade-in');
         yesAnimation.classList.add('fade-out');
         setTimeout(() => {
             yesAnimation.classList.add('hidden');
-        }, 800); 
+        }, 800);
     }, 3000);
 }
 

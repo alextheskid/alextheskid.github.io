@@ -23,12 +23,12 @@ function changeTheme(theme) {
         if (nav) nav.classList.add('dark-theme');
     }
 
-    // Save the theme in a cookie
-    document.cookie = `theme=${theme}; path=/; max-age=31536000`; // 1 year
+    
+    document.cookie = `theme=${theme}; path=/; max-age=31536000`; 
 }
 
 function acceptCookies() {
-    document.cookie = "cookies_accepted=true; path=/; max-age=31536000"; // 1 year
+    document.cookie = "cookies_accepted=true; path=/; max-age=31536000"; 
     document.getElementById('cookie-consent').style.display = 'none';
     document.getElementById('overlay').classList.remove('active');
 }

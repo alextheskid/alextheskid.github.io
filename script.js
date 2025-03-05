@@ -131,3 +131,7 @@ function showNoAnimation() {
         }, 800); 
     }, 3000);
 }
+
+function toggleFlip(card) {
+    card.classList.toggle('card-flip');
+}
